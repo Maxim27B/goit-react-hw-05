@@ -1,29 +1,35 @@
 import Loader from '../components/Loader/Loader';
 import { useEffect, useState } from 'react';
-import moviesApi from '../components/movies-api';
+import { requestTrendingMovies } from '../components/api-requests';
+import MovieList from '../components/MovieList/MovieList';
 
 const HomePage = () => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [movies, setMovies] = useState(null);
 
-  //   const fetchMovies = async () => {
-  //     try {
-  //       setLoading(true);
-  //       const data = await moviesApi();
-  //       console.log(data.results);
-  //       return data.results;
-  //     } catch (error) {
-  //       console.log(error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-  //   const movies = fetchMovies();
-  //   console.log(movies);
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        setLoading(true);
+        const data = await requestTrendingMovies();
+        setMovies(data.results);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchMovies();
+  }, []);
+
   return (
     <>
       {loading && <Loader />}
-
-      <p>HomePage</p>
+      {error !== null && (
+        <p style={{ color: 'red' }}>{error}. Please, try again</p>
+      )}
+      <MovieList movies={movies} />
     </>
   );
 };

@@ -1,0 +1,9 @@
+header {
+    box-shadow: -1px 5px 0px -1px rgba(106, 106, 106, 0.55);
+    -webkit-box-shadow: -1px 5px 0px -1px rgba(106, 106, 106, 0.55);
+    -moz-box-shadow: -1px 5px 0px -1px rgba(106, 106, 106, 0.55);
+}
+
+main {
+    padding: 20px;
+}

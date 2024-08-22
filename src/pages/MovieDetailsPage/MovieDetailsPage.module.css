@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    gap: 40px;
+    padding: 12px;
+    border-bottom: 1px solid black;
+}
+
+.additionalInfo {
+    margin-left: 20px;
+}
