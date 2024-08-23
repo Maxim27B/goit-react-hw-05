@@ -25,6 +25,7 @@ const HomePage = () => {
 
   return (
     <>
+      <h1>Trending today</h1>
       {loading && <Loader />}
       {error !== null && (
         <p style={{ color: 'red' }}>{error}. Please, try again</p>

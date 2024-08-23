@@ -1,0 +1,19 @@
+.input {
+    display: block;
+    width: 250px;
+    height: 20px;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    border-color: #001137;
+}

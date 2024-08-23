@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 const MovieList = ({ movies }) => {
   return (
     <>
-      <h1>Trending today</h1>
       <ul>
         {Array.isArray(movies) &&
           movies.map(movie => {

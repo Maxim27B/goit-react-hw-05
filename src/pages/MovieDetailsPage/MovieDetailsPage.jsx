@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useParams } from 'react-router-dom';
 import { requestMovieById } from '../../components/api-requests';
 import Loader from '../../components/Loader/Loader';
 import css from './MovieDetailsPage.module.css';
+import clsx from 'clsx';
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -55,12 +56,26 @@ const MovieDetailsPage = () => {
             </div>
           </div>
           <h4 className={css.additionalInfo}>Additional information</h4>
-          <ul>
+          <ul className={css.additionalInfoContainer}>
             <li>
-              <Link to="cast">Cast</Link>
+              <NavLink
+                to="cast"
+                className={({ isActive }) => {
+                  return clsx(css.link, isActive && css.active);
+                }}
+              >
+                Cast
+              </NavLink>
             </li>
             <li>
-              <Link to="reviews">Reviews</Link>
+              <NavLink
+                to="reviews"
+                className={({ isActive }) => {
+                  return clsx(css.link, isActive && css.active);
+                }}
+              >
+                Reviews
+              </NavLink>
             </li>
           </ul>
         </>

@@ -1,0 +1,15 @@
+.actorList {
+    list-style-type: none;
+}
+
+.actorContainer {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid gray;
+    padding-bottom: 24px;
+}
+
+.img {
+    display: block;
+    height: 180px;
+}

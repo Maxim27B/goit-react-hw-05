@@ -8,3 +8,24 @@
 .additionalInfo {
     margin-left: 20px;
 }
+
+.additionalInfoContainer {
+    padding-bottom: 12px;
+}
+
+.link {
+
+    color: black;
+    font-size: large;
+    text-decoration: none;
+}
+
+.active {
+    color: rgb(255, 0, 72);
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rgb(255, 0, 72);
+    text-decoration: underline;
+}
