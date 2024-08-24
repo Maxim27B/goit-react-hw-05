@@ -1,5 +1,11 @@
-import { useEffect, useState } from 'react';
-import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useParams,
+} from 'react-router-dom';
 import { requestMovieById } from '../../components/api-requests';
 import Loader from '../../components/Loader/Loader';
 import css from './MovieDetailsPage.module.css';
@@ -10,6 +16,9 @@ const MovieDetailsPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [movie, setMovie] = useState(null);
+
+  const location = useLocation();
+  const backLinkRef = useRef(location.state ?? '/');
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -33,6 +42,7 @@ const MovieDetailsPage = () => {
       )}
       {movie !== null && (
         <>
+          <Link to={backLinkRef.current}>Go Back</Link>
           <div className={css.container}>
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
