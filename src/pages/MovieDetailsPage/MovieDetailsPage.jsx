@@ -18,7 +18,7 @@ const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
 
   const location = useLocation();
-  const backLinkRef = useRef(location.state ?? '/');
+  const backLinkRef = useRef(location.state ?? '/movies');
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -42,7 +42,9 @@ const MovieDetailsPage = () => {
       )}
       {movie !== null && (
         <>
-          <Link to={backLinkRef.current}>Go Back</Link>
+          <Link to={backLinkRef.current} className={css.backLink}>
+            Go Back
+          </Link>
           <div className={css.container}>
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}

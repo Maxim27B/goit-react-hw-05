@@ -29,3 +29,19 @@
     color: rgb(255, 0, 72);
     text-decoration: underline;
 }
+
+.backLink {
+    text-decoration: none;
+    color: black;
+    margin-left: 8px;
+    padding: 8px;
+    align-items: center;
+    border: 1px solid red;
+    border-radius: 8px;
+    transition: color 250ms linear, background-olor 250ms linear;
+}
+
+.backLink:hover {
+    color: white;
+    background-color: red;
+}
